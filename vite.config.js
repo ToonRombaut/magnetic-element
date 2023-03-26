@@ -5,8 +5,8 @@ export default defineConfig({
     build:{
         lib:{
             entry: resolve(__dirname,'src/index.js'),
-            name:'magnetic-element',
-            fileName:'magnetic-element'
+            name:'magnetic-elements',
+            fileName:'magnetic-elements'
         }
     }
 })

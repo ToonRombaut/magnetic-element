@@ -1,23 +1,23 @@
 {
-  "name": "@toon.rombaut/magnetic-element",
-  "version": "1.1.5",
-  "description": "A smoothscroll library that adds inertia scrolling to your website.",
+  "name": "@toon.rombaut/magnetic-elements",
+  "version": "1.0.0",
+  "description": "A javascript library that makes dom elements react magnetic to the cursor.",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/magnetic-element.umd.cjs",
-  "module": "./dist/magnetic-element.js",
+  "main": "./dist/magnetic-elements.umd.cjs",
+  "module": "./dist/magnetic-elements.js",
   "exports": {
     ".": {
-      "import": "./dist/magnetic-element.js",
-      "require": "./dist/magnetic-element.umd.cjs"
+      "import": "./dist/magnetic-elements.js",
+      "require": "./dist/magnetic-elements.umd.cjs"
     }
   },
   "keywords": [
     "magnetic",
-    "element",
-    "magnetic element"
+    "elements",
+    "magnetic elements"
   ],
   "author": "Toon Rombaut <toon.rombaut@hotmail.com> (https://toonrombaut.be)",
   "license": "MIT",
@@ -32,10 +32,10 @@
   "packageManager": "yarn@3.5.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ToonRombaut/magnetic-element.git"
+    "url": "git+https://github.com/ToonRombaut/magnetic-elements.git"
   },
   "bugs": {
-    "url": "https://github.com/ToonRombaut/magnetic-element/issues"
+    "url": "https://github.com/ToonRombaut/magnetic-elements/issues"
   },
-  "homepage": "https://github.com/ToonRombaut/magnetic-element#readme"
+  "homepage": "https://github.com/ToonRombaut/magnetic-elements#readme"
 }

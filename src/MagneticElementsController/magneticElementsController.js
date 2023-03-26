@@ -1,8 +1,8 @@
-export default class MagneticElementController{
+export default class MagneticElementsController{
     /**
      * @param {Object} options
      * @param {Boolean|undefined} [options.standalone] Set to true if you are using your own external RAF loop.
-     * @param {Number|undefined} [options.triggerArea] The size of the area around the element to trigger the magnetic effect.
+     * @param {Number|undefined} [options.triggerArea] The size of the area around the elements to trigger the magnetic effect.
      * @param {Number|undefined} [options.interpolationFactor] The interpolation factor used by the lerp function.
      * @param {Number|undefined} [options.magneticForce] The strength of the magnetic effect.
      */

@@ -186,9 +186,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@toon.rombaut/magnetic-element@workspace:.":
+"@toon.rombaut/magnetic-elements@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@toon.rombaut/magnetic-element@workspace:."
+  resolution: "@toon.rombaut/magnetic-elements@workspace:."
   dependencies:
     vite: ^4.0.0
   languageName: unknown

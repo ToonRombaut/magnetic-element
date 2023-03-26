@@ -1,2 +1,2 @@
-import MagneticElementController from "./MagneticElementController/magneticElementController";
-export {MagneticElementController};
+import MagneticElementsController from "./MagneticElementsController/magneticElementsController";
+export {MagneticElementsController};
