@@ -1,6 +1,6 @@
 {
   "name": "@toon.rombaut/magnetic-elements",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "A javascript library that makes dom elements react magnetic to the cursor.",
   "type": "module",
   "files": [

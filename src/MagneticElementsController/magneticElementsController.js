@@ -5,13 +5,14 @@ export default class MagneticElementsController{
      * @param {Number|undefined} [options.triggerArea] The size of the area around the elements to trigger the magnetic effect.
      * @param {Number|undefined} [options.interpolationFactor] The interpolation factor used by the lerp function.
      * @param {Number|undefined} [options.magneticForce] The strength of the magnetic effect.
+     * @param {Boolean|undefined} [options.useAbsoluteMousePosition] Use mouse position relative to the client.
      */
     constructor(options){
         this.standalone = options?.standalone ?? false;
         this.triggerArea = options?.triggerArea ?? 200;
         this.interpolationFactor = options?.interpolationFactor ?? 0.8
         this.magneticForce = options?.magneticForce ?? 0.3;
-
+        this.useAbsoluteMousePosition = options.useAbsoluteMousePosition ?? false;
         this.validateOptions(options);
         this.initEvents();
 
@@ -29,7 +30,7 @@ export default class MagneticElementsController{
         if(!this.standalone) this.update();
         
     }
-    validateOptions = (options) => {
+    validateOptions = () => {
         if(typeof this.standalone !== 'boolean') throw new Error("standalone value must be a boolean");
 
         if(typeof this.triggerArea !=='number') throw new Error("triggerArea valu muast be a numeric value greater or equal to 0.")
@@ -42,6 +43,8 @@ export default class MagneticElementsController{
         if(typeof this.magneticForce !== 'number') throw new Error("magneticForce value must be a numeric value between 0 and 1.");
         if(this.magneticForce <= 0) throw new Error("magneticForce value must be greater than 0.");
         if(this.magneticForce > 1) throw new Error("magneticForce value must be less than 1.");
+
+        if(typeof this.useAbsoluteMousePosition !== 'boolean') throw new Error("useAbsoluteMousePosition value must be a boolean");
     }
     lerp = (current,target,factor,delta) => {
         const fpsAwareFactor = 1- Math.pow(factor, delta/100);
@@ -57,6 +60,11 @@ export default class MagneticElementsController{
         window.removeEventListener("resize", this.onResize)
     }
     onMouseMove = (e) =>{
+        if(this.useAbsoluteMousePosition){
+            this.mouse.x = e.clientX;
+            this.mouse.y = e.clientY;
+            return;
+        }
         this.mouse.x = e.pageX;
         this.mouse.y = e.pageY;
     }
@@ -80,11 +88,9 @@ export default class MagneticElementsController{
         return Math.hypot(x1-x2,y1-y2);
     }
     update = () => {
-        //console.log(this.lerpingData)
         const delta = performance.now() - this.time;
         this.time = performance.now();
         for (let i = 0; i < this.lerpingData.length; i++) {
-            //if(i > 0) return requestAnimationFrame(this.update)
             const element = this.lerpingData[i];
             const distanceFromMouse = this.calculateDistance(
                 this.mouse.x,
