@@ -1,6 +1,5 @@
 # Magnetic elements
-Lightweight library to add smooth scrolling to your website.
-Fixes problems with appearing/disappearing browsers UI (ex. url section on Chrome/Safari).
+Lightweight library to make html elements magnetic to your mouse.
 
 ## Features
 

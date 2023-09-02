@@ -112,29 +112,5 @@ export default class MagneticElementsController{
 
         }
         if(!this.standalone) requestAnimationFrame(this.update);
-
-        // const element = this.lerpingData[0];
-        //     const distanceFromMouse = this.calculateDistance(
-        //         this.mouse.x,
-        //         this.mouse.y,
-        //         element.boundingClientRect.left  + element.boundingClientRect.width / 2,
-        //         element.boundingClientRect.top + element.boundingClientRect.height / 2
-        //     );
-
-        //     const targetPosition = {x:0,y:0};
-        //     if(distanceFromMouse < this.triggerArea){
-        //         targetPosition.x = this.mouse.x - (element.boundingClientRect.left + element.boundingClientRect.width /2);
-        //         targetPosition.y = this.mouse.y - (element.boundingClientRect.top + element.boundingClientRect.height /2);
-        //     }
-
-        //     element.x.target = targetPosition.x * this.magneticForce;
-        //     element.y.target = targetPosition.y * this.magneticForce;
-            
-        //     element.x.current = this.lerp(element.x.current,element.x.target,this.interpolationFactor,delta);
-        //     element.y.current = this.lerp(element.y.current,element.y.target,this.interpolationFactor,delta);
-
-        //     this.magneticElements[0].style.transform = `translate(${element.x.current}px,${element.y.current}px)`;
-
-        //     if(!this.standalone) requestAnimationFrame(this.update);
     }
 }
