@@ -101,6 +101,9 @@ export default class MagneticElementsController{
 
             element.x.target = targetPosition.x * this.magneticForce;
             element.y.target = targetPosition.y * this.magneticForce;
+
+            if(element.x.current < .1 && element.x.target == 0) element.x.current = 0;
+            if(element.y.current < .1 && element.y.target == 0) element.y.current = 0;
             
             element.x.current = this.lerp(element.x.current,element.x.target,this.interpolationFactor,delta);
             element.y.current = this.lerp(element.y.current,element.y.target,this.interpolationFactor,delta);
